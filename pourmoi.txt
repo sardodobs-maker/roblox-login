@@ -1,0 +1,1 @@
+normalement dans le terminal tu met "node server.js" et le serv ce lance et il faut regarder dans user.json les mdp
