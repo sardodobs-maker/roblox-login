@@ -2,15 +2,11 @@ const express = require("express");
 const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// lire JSON envoyé par le site
 app.use(express.json());
-
-// servir le dossier public
 app.use(express.static("public"));
 
-// route login
 app.post("/login", (req, res) => {
 
     console.log("Requête reçue :", req.body);
@@ -37,5 +33,5 @@ app.post("/login", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
+    console.log(`✅ Serveur lancé sur le port ${PORT}`);
 });
